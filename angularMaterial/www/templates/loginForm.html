@@ -1,0 +1,28 @@
+﻿
+<md-dialog aria-label="" ng-cloak>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Lütfen Giriş Yapın</h2>
+        </div>
+    </md-toolbar>
+   
+    <md-content id="loginForm">
+        <md-input-container>
+            <label>Kullanıcı Adı</label>
+            <input ng-model="user.name" type="text">
+        </md-input-container>
+        <md-input-container>
+            <label>Şifre</label>
+            <input ng-model="user.password" type="password">
+        </md-input-container>
+        <md-switch class="md-primary" ng-model="user.remember" aria-label="Beni Hatırla">
+            Beni Hatırla
+        </md-switch>
+        <div layout="column">
+            <md-button  class="md-primary md-raised">Giriş</md-button>
+            <md-button  class="md-warn md-raised">Vazgeç</md-button>
+        </div>
+       
+    </md-content>
+
+</md-dialog>

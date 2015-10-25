@@ -1,0 +1,37 @@
+﻿.music-image {
+    width: 56px;
+    height: 56px;
+}
+body {
+    overflow: hidden;
+}
+#content {
+    height: 600px;
+    overflow: scroll;
+}
+#albumcontent .jumbotron{
+    padding:0px !important;
+}
+
+#albumcontent span{
+    width:auto;
+    height:auto;
+    margin-left:16px;
+    font-size:18px;
+    margin-top:12px;
+    color:#272727;
+    display:block;
+
+}
+.album-image {
+    width: 100%;
+    height: inherit;
+}
+
+#albumcontent label{
+    margin-left:16px;
+    color:#808080;
+    margin-bottom:8px;
+
+}
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Polymer</title>
+    <script src="js/data.js"></script>
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel="import" href="bower_components/polymer/polymer.html">
+    <link rel="import" href="bower_components/font-roboto/roboto.html" />
+    <link rel="import" href="bower_components/paper-tabs/paper-tabs.html" />
+    <link rel="import" href="bower_components/iron-pages/iron-pages.html">
+    <link rel="import" href="custom_elements/music-list.html" />
+    <link rel="import"  href="custom_elements/album-list.html" />
+    <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html" />
+  
+</head>
+<body>
+    <template is="dom-bind" id="layout">
+     <style is="custom-style">
+         :root{
+             --paper-tabs-selection-bar-color:var(--paper-blue-a100);
+             --paper-tab-ink: var(--paper-blue-a100);               
+         }
+     </style>
+        <paper-scroll-header-panel class="flex">
+            <paper-toolbar>
+                <paper-tabs selected="{{selected}}" elevation="2">
+                    <paper-tab>Muzikler</paper-tab>
+                    <paper-tab>Albumler</paper-tab>
+                </paper-tabs>
+            </paper-toolbar>        
+                <iron-pages selected="{{selected}}">
+                    <div>
+                      
+                        <music-list></music-list>
+                    </div>
+                    <div>
+                        <album-list></album-list>
+                    </div>
+                </iron-pages>
+     
+        </paper-scroll-header-panel>
+
+       
+       
+    </template>
+
+
+    <script>
+        window.addEventListener('WebComponentsReady', function () {
+        var scope = document.querySelector("template#layout");
+        scope.selected = 0;
+        });
+    </script>
+    <script type="text/javascript" src="cordova.js"></script>
+</body>
+</html>

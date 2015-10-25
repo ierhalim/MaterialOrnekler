@@ -1,0 +1,12 @@
+﻿<md-content class="md-whiteframe-14dp content" md-padding >
+    <md-grid-list md-cols-sm="2" md-cols-gt-md="6"
+                  md-row-height="1:1">
+        <md-grid-tile md-rowspan="1" md-colspan="2" md-colspan-sm="1"
+                      ng-repeat="item in albums">
+            <img class="album-image" src="{{item.image}}" />
+            <md-grid-tile-footer>
+                <h3>{{item.name}}</h3>
+            </md-grid-tile-footer>
+        </md-grid-tile>
+    </md-grid-list>
+</md-content>

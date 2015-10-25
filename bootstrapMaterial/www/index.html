@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+ 
+      
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+     
+        <title>Bootstrap Material</title>
+        <link href="dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="dist/css/material.min.css" rel="stylesheet" />
+        <link href="dist/css/material-fullpalette.min.css" rel="stylesheet" />
+        <link href="dist/css/ripples.min.css" rel="stylesheet" />
+        <link href="dist/css/roboto.min.css" rel="stylesheet" />
+        <link href="custom/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="app">   
+            <div class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="javascript:void(0)">Ba Muzik</a>
+                </div>
+                <div class="navbar-collapse collapse navbar-responsive-collapse">
+                    <ul class="nav navbar-nav">
+                        <li id="menu-item-musiclist" class="active menu-item"><a href="javascript:router.getContent('musiclist',loadMusicData)">Muzikler</a></li>
+                        <li id="menu-item-albumlist" class="menu-item"><a href="javascript:router.getContent('albumlist',loadAlbumData)">Albumler</a></li>
+                      
+                    </ul>
+                </div>
+            </div>          
+            <div id="content"></div>
+        </div>
+
+
+        <div id="loginDialog" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                        <h4 class="modal-title">Lutfen Giris Yapin</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="form-control floating-label" placeholder="Kullanici Adi">
+                        <input  type="password" class="form-control floating-label" placeholder="Sifre"/>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-dismiss="modal">Giris</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="custom/data.js"></script>
+        <script src="dist/js/jquery-2.1.4.min.js"></script>
+        <script src="dist/js/bootstrap.min.js"></script>
+        <script src="dist/js/material.min.js"></script>
+        <script src="dist/js/ripples.min.js"></script>
+        <script src="custom/navigator.js"></script>
+        <script src="custom/navigator.js"></script>
+        <script src="custom/loginForm.js"></script>
+        <!--
+            cordova js (Tasarým ile ilgisi yok mobil ortama build almak için)        
+-->
+        <script type="text/javascript" src="cordova.js"></script>
+     
+    </body>
+</html>

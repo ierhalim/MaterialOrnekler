@@ -1,0 +1,26 @@
+﻿
+<md-content class="md-whiteframe-14dp content" md-padding >
+    <md-subheader class="md-primary">Radyondan Beğenilen</md-subheader>
+    <md-list layout-padding>
+        <md-list-item class="md-3-line" ng-repeat="item in musics" ng-click="loginForm()">
+            <img ng-src="{{item.image}}" class="md-avatar">
+            <div class="md-list-item-text">
+                <h3>{{item.name}}</h3>
+                <h4>{{item.artist}}</h4>
+            </div>
+            <md-divider ng-hide="$last"></md-divider>
+        </md-list-item>
+    </md-list>
+    <md-subheader class="md-warn">Tavsiye Edilen</md-subheader>
+    <md-list layout-padding>
+        <md-list-item class="md-3-line" ng-repeat="item in musics" ng-click="loginForm()">
+            <img ng-src="{{item.image}}" class="md-avatar">
+            <div class="md-list-item-text">
+                <h3>{{item.name}}</h3>
+                <h4>{{item.artist}}</h4>
+            </div>
+            <md-divider ng-hide="$last"></md-divider>
+        </md-list-item>
+    </md-list>
+</md-content>
+

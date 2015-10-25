@@ -1,0 +1,24 @@
+.content {
+    background-color: white;
+    height: 500px;
+}
+body,.wrapper{
+    background-color: #e6e6e6 !important;
+}
+body {
+    height: 100%;
+    overflow: hidden;
+    
+}
+
+.album-image {
+    width: 100%;
+    height: 100%;
+}
+#loginForm {
+    width: 300px;
+    
+}
+md-tabs{
+    background-color:white;
+}

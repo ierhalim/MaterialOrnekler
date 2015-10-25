@@ -1,0 +1,85 @@
+﻿<link rel="import" href="../bower_components/polymer/polymer.html" />
+<link rel="import" href="../bower_components/paper-card/paper-card.html" />
+<link rel="import" href="../bower_components/paper-item/all-imports.html" />
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html" />
+<link rel="import" href="../bower_components/paper-input/paper-input.html" />
+<link rel="import" href="../bower_components/paper-button/paper-button.html" />
+<link rel="import" href="../bower_components/neon-animation/animations/scale-down-animation.html" />
+<link rel="import" href="../bower_components/neon-animation/animations/scale-up-animation.html" />
+<link rel="import" href="../bower_components/neon-animation/animations/slide-from-left-animation.html" />
+<link rel="import" href="../bower_components/neon-animation/animations/slide-right-animation.html" />
+<dom-module id="music-list">
+    <template>
+        <style is="custom-style">
+            paper-card {
+                width: 100%;
+                margin-top: 40px;
+                padding: 0;
+            }
+
+            .music-image {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                overflow: hidden;
+                background: #ccc;
+                margin-right:40px;
+            }
+
+            paper-dialog{
+                width:400px;
+            }
+            #cancel{
+                background-color:#EF5350;
+                color:white;
+            }
+            #login{
+                background-color:#3F51B5;
+                color:white;
+            }
+        </style>
+        <!--Content-->
+        <paper-card elavation="1">
+            <template is="dom-repeat" items="{{musics}}">
+                <paper-item on-tap="showLoginPage">
+                    <div class="music-image">
+                        <img src="{{item.image}}" width="40" height="40" />
+                    </div>
+                    <paper-item-body two-line>
+                        <div>                      
+                            {{item.name}}
+                        </div>
+                        <div secondary>{{item.artist}}</div>
+                    </paper-item-body>
+                </paper-item>
+            </template>
+
+        </paper-card>
+        <paper-dialog id="loginDialog"
+                      entry-animation="slide-from-left-animation"
+                      exit-animation="slide-right-animation">
+
+            <h2>Lutfen Giris Yapin</h2>
+            <paper-dialog-scrollable>
+                <paper-input label="Kullanici Adi"></paper-input>
+                <paper-input label="Sifre" type="password"></paper-input>
+            </paper-dialog-scrollable>
+            <div class="buttons">
+                <paper-button raised dialog-dismiss id="cancel">Vazgec</paper-button>
+                <paper-button raised dialog-confirm id="login">Giris Yap</paper-button>
+            </div>
+        </paper-dialog>
+    </template>
+    <script>
+        Polymer({
+            is: "music-list",
+            ready: function () {
+                this.musics = musicData;
+            },
+            showLoginPage: function () {
+                this.$.loginDialog.open();
+            }
+        });
+    </script>
+</dom-module>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="css/angular.material.min.css" rel="stylesheet" />
+    <script src="js/data.js"></script>
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular.animate.min.js"></script>
+    <script src="js/lib/angular.aria.min.js"></script>
+    <script src="js/lib/angular.material.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/directives/musicList.js"></script>
+    <script src="js/directives/albumList.js"></script>
+    <script src="js/controllers/layoutCtrl.js"></script>
+    <script src="js/factories/loginDialog.js"></script>
+    <title>Angular Material</title>
+</head>
+<!--
+    Bu örnek Angular material 21.10.2015'te en güncel olan 1.0.0-rc1 versiyonu ile hazýrlanmýþtýr.
+-->
+<body ng-app="app">
+    <div flex layout-fill ng-cloak ng-controller="layoutCtrl" md-swipe-left="goToAlbums()" md-swipe-right="goToMusics()">
+        <!--
+            .md-whiteframe
+                Ýçeriðinin z index'ini belirler.
+                https://material.angularjs.org/1.0.0-rc1/demo/whiteframe
+        -->
+        <md-tabs md-selected="selectedIndex" md-dynamic-height="true" md-stretch-tabs="always" md-autoselect="false" md-no-pagination="false">
+            <md-tab label="Muzikler">
+                <!--Angular directive'i (tanýmlamasý js/directives/musicList.js)-->
+                <div class="wrapper">
+                    <music-list></music-list>
+                </div>
+
+            </md-tab>
+            <md-tab label="Albumler">
+                <div class="wrapper">
+                    <album-list></album-list>
+                </div>
+
+            </md-tab>
+        </md-tabs>
+    </div>
+        <!--
+        cordova(tasarým ile bir alakasý yok mobil ortama build alabilmek için kullanýlýr.
+        Eðer örneði web üzerinde çalýþtýrýyorsanýz silebilirsiniz)
+    -->
+    <script type="text/javascript" src="cordova.js"></script>
+</body>
+</html>
